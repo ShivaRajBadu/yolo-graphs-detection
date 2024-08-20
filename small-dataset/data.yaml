@@ -1,0 +1,6 @@
+path: ./small-dataset
+train: images/train
+val: images/val
+
+nc: 3
+names: ["bar_chart", "graph", "pie_chart"]
