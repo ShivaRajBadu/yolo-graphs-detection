@@ -2,13 +2,17 @@ import json
 import requests
 from PIL import Image, ImageDraw, ImageFont
 import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 
+key = os.getenv('ULTRALYTICS_API_KEY')
 url = "https://api.ultralytics.com/v1/predict/vpDf4sEEU0Fg3AiAbQVC"
-headers = {"x-api-key": ""}
+headers = {"x-api-key": key}
 data = {"imgsz": 640, "conf": 0.25, "iou": 0.45}
 
-image_path = "/home/badu/workspace/learn/scripts/data-clean/test6.webp"  # Update this with your image path
+image_path = "./test6.webp"  # Update this with your image path
 
 # Open the image file
 with open(image_path, "rb") as f:
